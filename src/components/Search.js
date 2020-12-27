@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import { FormControl, Input, IconButton } from '@chakra-ui/react';
 import { FaSearch } from 'react-icons/fa';
 
-const Search = () => {
-  const [keyword, setKeyword] = useState('');
-
+const Search = ({ keyword, setKeyword }) => {
   const changeHandler = event => setKeyword(event.target.value);
 
   const submitHandler = event => {

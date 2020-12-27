@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { ChakraProvider, Box, Text, Flex, theme } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Search from './components/Search';
 
 function App() {
+  const [keyword, setKeyword] = useState('');
+
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
@@ -15,7 +18,7 @@ function App() {
           <Text fontSize="3xl" fontWeight="bold">
             Sport Teams
           </Text>
-          <Search />
+          <Search keyword={keyword} setKeyword={setKeyword} />
           <ColorModeSwitcher />
         </Flex>
       </Box>
