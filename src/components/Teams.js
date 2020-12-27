@@ -1,39 +1,21 @@
-import {
-  useDisclosure,
-  Grid,
-  Box,
-  Text,
-  Image,
-  Button,
-} from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
+import Team from './Team';
 
-const Teams = ({ teams }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  return (
-    <Grid templateColumns="repeat(4, 1fr)" gap={6} py={2} px={5}>
-      {teams.teams?.map(team => (
-        <Box
-          p={4}
-          w="100%"
-          textAlign="center"
-          borderRadius="md"
-          boxShadow="md"
-          key={team.idTeam}
-        >
-          <Text mb={4} fontSize="xl" fontWeight="bold">
-            {team.strTeam}
-          </Text>
-          <Box boxSize="100px" m="auto">
-            <Image src={team.strTeamBadge} alt={team.strAlternate} />
-          </Box>
-          <Button onClick={onOpen} mt={4} mb={2}>
-            Detail
-          </Button>
-        </Box>
-      ))}
-    </Grid>
-  );
-};
+const Teams = ({ teams }) => (
+  <Grid templateColumns="repeat(4, 1fr)" gap={6} py={2} px={5}>
+    {teams.teams?.map(team => (
+      <Team
+        key={team.idTeam}
+        name={team.strTeam}
+        badge={team.strTeamBadge}
+        alt={team.strAlternate}
+        stadiumName={team.strStadium}
+        stadium={team.strStadiumThumb}
+        desc={team.strDescriptionEN}
+        jersey={team.strTeamJersey}
+      />
+    ))}
+  </Grid>
+);
 
 export default Teams;
