@@ -1,14 +1,23 @@
-import { ChakraProvider, Box, Text, Grid, theme } from '@chakra-ui/react';
+import { ChakraProvider, Box, Text, Flex, theme } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import Search from './components/Search';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <Text>Sport Teams</Text>
-        </Grid>
+        <Flex
+          p={5}
+          justifyContent="space-between"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          <Text fontSize="3xl" fontWeight="bold">
+            Sport Teams
+          </Text>
+          <Search />
+          <ColorModeSwitcher />
+        </Flex>
       </Box>
     </ChakraProvider>
   );
