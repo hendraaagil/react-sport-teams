@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ChakraProvider, Box, Text, Flex, theme } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Search from './components/Search';
+import Teams from './components/Teams';
 
 function App() {
   const [teams, setTeams] = useState([]);
@@ -22,13 +23,7 @@ function App() {
           <ColorModeSwitcher />
         </Flex>
       </Box>
-      <Box textAlign="center" fontSize="xl">
-        {teams.teams?.map(team => (
-          <Text key={team.idTeam} fontSize="xl">
-            {team.strTeam}
-          </Text>
-        ))}
-      </Box>
+      <Teams teams={teams} />
     </ChakraProvider>
   );
 }
