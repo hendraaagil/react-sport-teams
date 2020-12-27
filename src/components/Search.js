@@ -1,11 +1,17 @@
+import { useState } from 'react';
 import { FormControl, Input, IconButton } from '@chakra-ui/react';
 import { FaSearch } from 'react-icons/fa';
 
-const Search = ({ keyword, setKeyword }) => {
-  const changeHandler = event => setKeyword(event.target.value);
+const Search = ({ setTeams }) => {
+  const [keyword, setKeyword] = useState('');
 
   const submitHandler = event => {
     event.preventDefault();
+    fetch(
+      `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${keyword}`
+    )
+      .then(response => response.json())
+      .then(data => setTeams(data));
     console.log(keyword);
   };
 
@@ -16,7 +22,7 @@ const Search = ({ keyword, setKeyword }) => {
           type="text"
           placeholder="Search teams..."
           value={keyword}
-          onChange={changeHandler}
+          onChange={event => setKeyword(event.target.value)}
         />
         <IconButton
           ml={2}

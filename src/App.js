@@ -4,7 +4,7 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 import Search from './components/Search';
 
 function App() {
-  const [keyword, setKeyword] = useState('');
+  const [teams, setTeams] = useState([]);
 
   return (
     <ChakraProvider theme={theme}>
@@ -18,9 +18,16 @@ function App() {
           <Text fontSize="3xl" fontWeight="bold">
             Sport Teams
           </Text>
-          <Search keyword={keyword} setKeyword={setKeyword} />
+          <Search setTeams={setTeams} />
           <ColorModeSwitcher />
         </Flex>
+      </Box>
+      <Box textAlign="center" fontSize="xl">
+        {teams.teams?.map(team => (
+          <Text key={team.idTeam} fontSize="xl">
+            {team.strTeam}
+          </Text>
+        ))}
       </Box>
     </ChakraProvider>
   );
