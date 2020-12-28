@@ -4,7 +4,7 @@ import Team from './Team';
 const Teams = ({ teams }) => (
   <Flex gap={6} py={2} px={5} flexWrap="wrap" justifyContent="center">
     {teams.teams ? (
-      teams.map(team => (
+      teams.teams.map(team => (
         <Team
           key={team.idTeam}
           name={team.strTeam}
