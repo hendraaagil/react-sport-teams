@@ -17,7 +17,12 @@ const Search = ({ setTeams }) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <FormControl id="keyword" w={500} display="flex" isRequired>
+      <FormControl
+        id="keyword"
+        w={{ base: 225, md: 400, lg: 500 }}
+        display="flex"
+        isRequired
+      >
         <Input
           type="text"
           placeholder="Search teams..."

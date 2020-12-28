@@ -1,8 +1,8 @@
-import { Grid } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import Team from './Team';
 
 const Teams = ({ teams }) => (
-  <Grid templateColumns="repeat(4, 1fr)" gap={6} py={2} px={5}>
+  <Flex gap={6} py={2} px={5} flexWrap="wrap" justifyContent="center">
     {teams.teams?.map(team => (
       <Team
         key={team.idTeam}
@@ -15,7 +15,7 @@ const Teams = ({ teams }) => (
         jersey={team.strTeamJersey}
       />
     ))}
-  </Grid>
+  </Flex>
 );
 
 export default Teams;

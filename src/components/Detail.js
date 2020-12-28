@@ -39,13 +39,13 @@ const Detail = ({
           {stadiumName}
         </Text>
         <Grid templateColumns="repeat(2, 1fr)" gap={4} textAlign="center">
-          <Box my={4} mx="auto" boxSize="200px">
+          <Box my={4} mx="auto" boxSize={{ base: '100px', md: '200px' }}>
             <Text mb={3} fontWeight="semibold" fontSize="lg">
               Logo
             </Text>
             <Image src={badge} alt={alt} />
           </Box>
-          <Box my={4} mx="auto" boxSize="200px">
+          <Box my={4} mx="auto" boxSize={{ base: '100px', md: '200px' }}>
             <Text mb={3} fontWeight="semibold" fontSize="lg">
               Jersey
             </Text>

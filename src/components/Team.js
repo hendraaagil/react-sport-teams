@@ -5,7 +5,14 @@ const Team = ({ name, badge, alt, stadiumName, stadium, desc, jersey }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box p={4} w="100%" textAlign="center" borderRadius="md" boxShadow="md">
+    <Box
+      m={4}
+      p={4}
+      w={{ base: '80%', md: '25%' }}
+      textAlign="center"
+      borderRadius="md"
+      boxShadow="md"
+    >
       <Text mb={4} fontSize="xl" fontWeight="bold">
         {name}
       </Text>

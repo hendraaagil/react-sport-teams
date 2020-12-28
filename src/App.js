@@ -12,11 +12,11 @@ function App() {
       <Box textAlign="center" fontSize="xl">
         <Flex
           p={5}
-          justifyContent="space-between"
+          justifyContent={{ base: 'center', sm: 'space-between' }}
           alignItems="center"
           flexWrap="wrap"
         >
-          <Text fontSize="3xl" fontWeight="bold">
+          <Text mb={{ base: 4, sm: 0 }} fontSize="3xl" fontWeight="bold">
             Sport Teams
           </Text>
           <Search setTeams={setTeams} />
